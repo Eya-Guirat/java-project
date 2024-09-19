@@ -28,10 +28,8 @@ public class ZooManagement {
 
         System.out.println(myZoo);
         System.out.println(myZoo.toString());
-        //Zoo@49097b5d
-        //Zoo@49097b5d
-//
-       System.out.println(lion);
+
+       System.out.println(lion);git
        System.out.println(lion.toString());
 
     }
