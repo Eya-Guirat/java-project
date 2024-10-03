@@ -1,13 +1,49 @@
+package tn.esprit.gestionzoo.entities;
+
 public class Zoo {
 
-    Animal [] animals;
-    String name;
-    String city;
-    static int nbrCages=25;
+    private Animal [] animals;
+    private String name;
+    private String city;
+    private final static int nbrCages=25;
 
-    public Zoo(Animal[] animals, String name, String city,int nbrCages) {
+    public Animal[] getAnimals() {
+        return animals;
+    }
+
+    public void setAnimals(Animal[] animals) {
+        this.animals = animals;
+    }
+
+    public void setName(String name) {
+     if(name == null || name.isEmpty()){
+         System.out.println("Name cannot be empty");
+     } else
+        this.name = name;
+
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+
+
+    public String getName() {
+        return name;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public static int getNbrCages() {
+        return nbrCages;
+    }
+
+    public Zoo(Animal[] animals, String name, String city) {
         this.animals = new Animal[nbrCages];
-        this.nbrCages = nbrCages;
+       // this.nbrCages = nbrCages;
         this.city = city;
         this.name = name;
     }
@@ -20,7 +56,7 @@ public class Zoo {
 
     @Override
     public String toString() {
-        return "Zoo{" +
+        return "tn.esprit.gestionzoo.entities.Zoo{" +
                 "name='" + name + '\'' +
                 ", city='" + city + '\'' +
                 ", nbrCages=" + nbrCages +
@@ -28,14 +64,19 @@ public class Zoo {
     }
 
     public boolean addAnimal(Animal animal){
+        if (isZooFull()){
+            return true;
+        } else {
         for (int i = 0; i < nbrCages; i++) {
-            if (animals[i]!=null && animal.name.equals(animals[i].name)  ) {
+            if (animals[i] != null && animal.getName().equals(animals[i].getName())) {
                 return false;
             } else if (animals[i] == null) {
                 animals[i] = animal;
+
                 return true;
             }
 
+        }
         }
         return false;
     }
@@ -50,7 +91,7 @@ public class Zoo {
 
     public int searchAnimal(Animal animal){
         for (int i = 0; i < nbrCages; i++) {
-            if (animals[i]==animal && animals[i].name.equals(animal.name)) {
+            if (animals[i]==animal && animals[i].getName().equals(animal.getName())) {
                 return i;
             }
         }

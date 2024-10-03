@@ -1,20 +1,23 @@
-import java.util.Scanner;
+package tn.esprit.gestionzoo.main;
+
+import tn.esprit.gestionzoo.entities.Animal;
+import tn.esprit.gestionzoo.entities.Zoo;
 
 public class ZooManagement {
 
     public static void main(String[] args) {
-        int nbCages;
-        String zooName;
-
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Ecrire le nom du zoo:");
-        zooName = scanner.nextLine();
-
-        System.out.println("Ecrire le nombre de cages dans le zoo:");
-        nbCages = scanner.nextInt();
-
-        System.out.println(zooName + " comporte " + nbCages + " cages");
+//        int nbCages;
+//        String zooName;
+//
+//        Scanner scanner = new Scanner(System.in);
+//
+//        System.out.println("Ecrire le nom du zoo:");
+//        zooName = scanner.nextLine();
+//
+//        System.out.println("Ecrire le nombre de cages dans le zoo:");
+//        nbCages = scanner.nextInt();
+//
+//        System.out.println(zooName + " comporte " + nbCages + " cages");
 
         //prosit2
         Animal[] animals = new Animal[25];
@@ -33,7 +36,7 @@ public class ZooManagement {
         animals[3] = tiger;
         animals[4] = bear;
 
-        Zoo myZoo = new Zoo(animals, "safari", "australia", 18);
+        Zoo myZoo = new Zoo(animals, "safari", "australia");
 
         //prosit 3
         myZoo.addAnimal(lion);
@@ -59,7 +62,7 @@ public class ZooManagement {
         boolean isFull = myZoo.isZooFull();
         System.out.println(isFull);
 
-        Zoo myZoo2 = new Zoo(animals, "safar", "South", 18);
+        Zoo myZoo2 = new Zoo(animals, "safar", "South");
         myZoo2.addAnimal(bear);
         myZoo2.addAnimal(lion);
 
