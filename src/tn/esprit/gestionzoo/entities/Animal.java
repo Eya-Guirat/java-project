@@ -1,6 +1,6 @@
 package tn.esprit.gestionzoo.entities;
 
-public class Animal {
+public sealed abstract class  Animal permits Aquatic , Terrestrial {
 
     protected String family;
     protected String name;
@@ -61,4 +61,6 @@ public class Animal {
                 ", isMammal=" + isMammal +
                 '}';
     }
+
+    public abstract void eatMeat(Food meat);
 }

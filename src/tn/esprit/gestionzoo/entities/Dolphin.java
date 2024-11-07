@@ -21,6 +21,7 @@ public class Dolphin extends Aquatic{
                 '}';
     }
 
+    @Override
     public void swim (){
         System.out.println("This dolphin is swimming");
     }

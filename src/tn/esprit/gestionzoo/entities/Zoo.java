@@ -6,6 +6,7 @@ public class Zoo {
     private String name;
     private String city;
     private final static int nbrCages=25;
+    
 
     public Animal[] getAnimals() {
         return animals;
